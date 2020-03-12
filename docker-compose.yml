@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  kovan-ws-proxy:
+    # image: nginx:latest
+    build: ./kovan/
+    container_name: kovan-infura-ws
+    tty: true
+    ports:
+      - 8042:80
+    # command: [nginx-debug, '-g', 'daemon off;']
+  
+  mainnet-ws-proxy:
+    # image: nginx:latest
+    build: ./mainnet/
+    container_name: mainnet-ws-proxy
+    tty: true
+    ports:
+      - 8011:80
+    # command: [nginx-debug, '-g', 'daemon off;']
